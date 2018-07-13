@@ -2,9 +2,13 @@
 const deviceNameLabel = document.getElementById('device-name');
 const connectButton = document.getElementById('connect');
 const disconnectButton = document.getElementById('disconnect');
+const volumeSlider = document.getElementById('volume-slider');
+const powerButton = document.getElementById('turn-on');
 const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
+
+const btnGroup= document.getElementById('btnGroup');
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -66,6 +70,13 @@ disconnectButton.addEventListener('click', () => {
   deviceNameLabel.textContent = defaultDeviceName;
 });
 
+
+volumeSlider.addEventListener('click', () => {
+  send(volumeSlider.value);
+  console.log(volumeSlider.value);
+  deviceNameLabel.textContent = defaultDeviceName;
+});
+
 sendForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -75,10 +86,65 @@ sendForm.addEventListener('submit', (event) => {
   inputField.focus();
 });
 
-// Switch terminal auto scrolling if it scrolls out of bottom.
-terminalContainer.addEventListener('scroll', () => {
-  const scrollTopOffset = terminalContainer.scrollHeight -
-      terminalContainer.offsetHeight - terminalAutoScrollingLimit;
+function sendBtnEvnt(e) {
+  if (e.target !== e.currentTarget) {
+      var clickedItem = e.target.id;
+      switch (clickedItem)
+      {
+        case 'onBtn':
+        console.log("Turn ON");
+       var prom= send("on");
+       prom.then(function(value) {
+          console.log(value);
+          // expected output: Array [1, 2, 3]
+        });
+        break;
+        case 'offBtn':
+        console.log("Turn OFF");
+        send("off");
+        break;
+        case 'clashBtn':
+        console.log("Clash");
+        send("clash");
+        break;
+        case 'blastBtn':
+        console.log("Blast");
+        send("blast");
+        break;
+        case 'forceBtn':
+        console.log("Force");
+        send("force");
+        break;
+        case 'lockupBtn':
+        console.log("Lockup");
+        send("lockup");
+        break;
+        case 'dragBtn':
+        console.log("Drag");
+        send("drag");
+        break;
+        case 'stopTrackBtn':
+        console.log("Stop Track");
+        send("stop_track");
+        break;
+        default:
+        console.log("what is this button-> " + clickedItem);
+      }
+  }
+  e.stopPropagation();
+}
 
-  isTerminalAutoScrolling = (scrollTopOffset < terminalContainer.scrollTop);
+btnGroup.addEventListener('click', (event) => {
+
+  sendBtnEvnt(event);
 });
+
+
+
+// Switch terminal auto scrolling if it scrolls out of bottom.
+// terminalContainer.addEventListener('scroll', () => {
+//   const scrollTopOffset = terminalContainer.scrollHeight -
+//       terminalContainer.offsetHeight - terminalAutoScrollingLimit;
+
+//   isTerminalAutoScrolling = (scrollTopOffset < terminalContainer.scrollTop);
+// });

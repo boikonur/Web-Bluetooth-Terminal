@@ -34,16 +34,19 @@
         <div class="toolbar">
 
             <div id="device-name" class="name">Terminal</div>
-              <span> Volume:</span>
-  <div class="slidercontainer">
+              
+            <span> Volume:</span>
+            <div class="slidercontainer">
+                  <input id="volume-slider" type="range" min="0" max="2000" class="slider_volume" >
+            </div>
+            <div class="battery_status">
 
-                  <input type="range" min="1" max="100" class="slider_volume" id="myRange"oninput='UpdateVolume();' onchange='UpdateVolume();'>
-                </div>
+            <i class="material-icons">battery_std</i> 
+            <span id=voltage>3.4</span>
+            <span>V</span> 
+            </div>
+            
             <div class="buttons">
-
-
-
-
                 <button id="connect" type="button" aria-label="Connect">
                     <i class="material-icons">bluetooth_connected</i>
                 </button>
@@ -52,40 +55,108 @@
                     <i class="material-icons">bluetooth_disabled</i>
                 </button>
 
+                <button id="turn-on" type="button" aria-label="Turn On">
+                        <i class="material-icons">power_settings_new</i>
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            
+            <div class="top" id=top_message>
+                <span id=reconnecting_message style='visibility:hidden;'>
+                    Reconnecting...
+            </span>          
             </div>
 
+            <div class="controls">
+                <div class=header>
+                <span class=title>Controls</span>
+            </div>
+                    
+            <span id=btnGroup  class=control-buttons>
+                <button id="onBtn" type="button" aria-label="On Button" value="on">
+                ON
+                </button>
+
+                <button id="offBtn" type="button" aria-label="Off Button">
+                OFF
+                </button>
+                
+                <button id="clashBtn" type="button" aria-label="clash Button">
+                CLASH
+                </button>
+
+                <button id="blastBtn" type="button" aria-label="Blast Button">
+                BLAST
+                </button>
+
+                <button id="forceBtn" type="button" aria-label="force Button">
+                    FORCE
+                </button>
+                
+                <button id="lockupBtn" type="button" aria-label="lockup Button">
+                LOCKUP
+                </button>
+
+                <button id="dragBtn" type="button" aria-label="drag Button">
+                DRAG
+                </button>
+
+                <button id="stopTrackBtn" type="button" aria-label="stop track Button">
+                STOP
+                </button>
+                </span>
+        </div>    
+        
+        <div class=content>
+                    
+            <div class=scrollable>
+                <div class="presets">
+                    <div class=header>
+                        <h3>Presets</h3>
+                    </div>
+                        <span class=unavailable>Waiting to list presets...</span>
+                    <ul>
+                        <li class="active"> Preset1 </li>
+                        <li class="active"> Preset2 </li>
+                        <li class="active"> Preset3 </li>
+                        <li class="active"> Preset4 </li>
+                    </ul>
+                </div>                     
+            </div>
+            
+            <div class=scrollable>
+                <div class="tracks">
+                    <div class=header>
+                        <h3>Tracks</h3>
+                    </div>               
+                    <span class=unavailable> Waiting for tracks...</span>
+                    <ul>
+                        <li class="active"> Trqck1 </li>
+                        <li class="active"> Track2 </li>
+                        <li class="active"> Track3 </li>
+                        <li class="active"> Track4 </li>
+                    </ul>
+                </div>                     
+            </div>
+        </div>             
+    </div>
+
+    <div id="terminal" class="terminal">    
         </div>
 
-        <div id="terminal" class="terminal">
-         <div class="presets">
-        <ul>      Presets
-            <li class="active">
-                Preset1
-            </li>
-
-             <li>
-                Preset2
-            </li>
-
-              <li>
-                Preset3
-            </li>
-            </ul>
-
+        <div class="footer">
+            <h3>FOOTER</h3>
+            <form id="send-form" class="send-form">
+                    <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type manual Command...">
+                    <button type="submit" aria-label="Send">
+                        <i class="material-icons">send</i>
+                    </button>
+            </form>
+           
         </div>
 
-        </div>
-
-
-        <form id="send-form" class="send-form">
-
-            <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type manual Command...">
-
-            <button type="submit" aria-label="Send">
-                <i class="material-icons">send</i>
-            </button>
-
-        </form>
 
     </div>
 
