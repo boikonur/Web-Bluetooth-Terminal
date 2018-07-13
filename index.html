@@ -32,33 +32,27 @@
     <div class="app">
 
         <div class="toolbar">
-
-            <div id="device-name" class="name">Terminal</div>
+                <div class="buttons">
+                        <button id="connect" type="button" aria-label="Connect">
+                            <i class="material-icons">bluetooth_connected</i>
+                        </button>
+                        <button id="disconnect" type="button" aria-label="Disconnect">
+                            <i class="material-icons">bluetooth_disabled</i>
+                        </button>
+                    </div>
+            <!-- <div id="device-name" class="name">Terminal</div> -->
               
-            <span> Volume:</span>
+            
             <div class="slidercontainer">
+                    <i class="material-icons">music_note</i>
                   <input id="volume-slider" type="range" min="0" max="2000" class="slider_volume" >
             </div>
             <div class="battery_status">
-
-            <i class="material-icons">battery_std</i> 
-            <span id=voltage>3.4</span>
-            <span>V</span> 
+                <!-- <i class="material-icons">battery_std</i>  -->
+                <span id=voltage>3.40</span>
             </div>
             
-            <div class="buttons">
-                <button id="connect" type="button" aria-label="Connect">
-                    <i class="material-icons">bluetooth_connected</i>
-                </button>
-
-                <button id="disconnect" type="button" aria-label="Disconnect">
-                    <i class="material-icons">bluetooth_disabled</i>
-                </button>
-
-                <button id="turn-on" type="button" aria-label="Turn On">
-                        <i class="material-icons">power_settings_new</i>
-                </button>
-            </div>
+           
         </div>
 
         <div class="container">
@@ -77,6 +71,7 @@
             <span id=btnGroup  class=control-buttons>
                 <button id="onBtn" type="button" aria-label="On Button" value="on">
                 ON
+                <i class="material-icons">power_settings_new</i>
                 </button>
 
                 <button id="offBtn" type="button" aria-label="Off Button">
@@ -147,7 +142,6 @@
         </div>
 
         <div class="footer">
-            <h3>FOOTER</h3>
             <form id="send-form" class="send-form">
                     <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type manual Command...">
                     <button type="submit" aria-label="Send">

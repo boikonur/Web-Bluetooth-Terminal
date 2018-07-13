@@ -10,6 +10,15 @@ const inputField = document.getElementById('input');
 
 const btnGroup= document.getElementById('btnGroup');
 
+var connected;
+
+var cmdSugestions = ["battery_voltage","get_on","id","on","off","Anguilla","beep","play",
+"play_track","stop_track","get_track","volumes","buffered","cd","mkdir","pwd","next pre",
+"prev pre","message","list_presets","get_preset","get_volume","set_volume","set_preset",
+"list_tracks","help","ls","rm","format","dir","readalot","sdtest","cache","effects","df",
+"high","low","booster","ton","tof","dumpwav","twiddle","twiddle2","malloc","top","version",
+"reset","hm1Xpin","hm1Xname","send","make_default_console","make_default_console"];
+
 // Helpers.
 const defaultDeviceName = 'Terminal';
 const terminalAutoScrollingLimit = terminalContainer.offsetHeight / 2;
