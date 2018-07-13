@@ -34,8 +34,15 @@
         <div class="toolbar">
 
             <div id="device-name" class="name">Terminal</div>
+              <span> Volume:</span>
+  <div class="slidercontainer">
 
+                  <input type="range" min="1" max="100" class="slider_volume" id="myRange"oninput='UpdateVolume();' onchange='UpdateVolume();'>
+                </div>
             <div class="buttons">
+
+
+
 
                 <button id="connect" type="button" aria-label="Connect">
                     <i class="material-icons">bluetooth_connected</i>
@@ -49,11 +56,30 @@
 
         </div>
 
-        <div id="terminal" class="terminal"></div>
+        <div id="terminal" class="terminal">
+         <div class="presets">
+        <ul>      Presets
+            <li class="active">
+                Preset1
+            </li>
+
+             <li>
+                Preset2
+            </li>
+
+              <li>
+                Preset3
+            </li>
+            </ul>
+
+        </div>
+
+        </div>
+
 
         <form id="send-form" class="send-form">
 
-            <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type something to send...">
+            <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type manual Command...">
 
             <button type="submit" aria-label="Send">
                 <i class="material-icons">send</i>
