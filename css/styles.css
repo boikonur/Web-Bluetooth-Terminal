@@ -28,6 +28,7 @@ body {
 
 .container {
   flex-direction: column;
+  padding-bottom: 60px;
 }
 
 .content,
@@ -104,7 +105,7 @@ button i.material-icons {
 }
 
 .terminal {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-width: 1px 0;
   flex-grow: 1;
   overflow: auto;
@@ -117,6 +118,7 @@ button i.material-icons {
   line-height: 1;
   padding: 4px 8px;
   word-break: break-word;
+  bottom: 70px;
 }
 
 .terminal div.out {
