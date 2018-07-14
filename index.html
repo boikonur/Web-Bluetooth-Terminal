@@ -135,14 +135,19 @@
                     </ul>
                 </div>                     
             </div>
+
+            <div class=scrollable>
+                <div id="terminal" class="terminal">    
+                </div>
+               
+            </div>
         </div>             
     </div>
 
-    <div id="terminal" class="terminal">    
-        </div>
-
+  
         <div class="footer">
             <form id="send-form" class="send-form">
+                    <div class="autocomplete"></div>
                     <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type manual Command...">
                     <button type="submit" aria-label="Send">
                         <i class="material-icons">send</i>
@@ -154,6 +159,7 @@
 
     </div>
 
+    <script src="js/autocomplete.js"></script>
     <script src="js/BluetoothTerminal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/companion.js" data-service-worker="sw.js"></script>

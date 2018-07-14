@@ -12,7 +12,7 @@ const btnGroup= document.getElementById('btnGroup');
 
 var connected;
 
-var cmdSugestions = ["battery_voltage","get_on","id","on","off","Anguilla","beep","play",
+var cmdSugestions = ["battery_voltage","get_on","id","on","off","beep","play",
 "play_track","stop_track","get_track","volumes","buffered","cd","mkdir","pwd","next pre",
 "prev pre","message","list_presets","get_preset","get_volume","set_volume","set_preset",
 "list_tracks","help","ls","rm","format","dir","readalot","sdtest","cache","effects","df",
@@ -148,7 +148,7 @@ btnGroup.addEventListener('click', (event) => {
   sendBtnEvnt(event);
 });
 
-
+autocomplete(document.getElementById("input"), cmdSugestions);
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
 // terminalContainer.addEventListener('scroll', () => {
